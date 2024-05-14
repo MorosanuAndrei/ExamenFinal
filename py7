@@ -1,0 +1,16 @@
+# BDD Test Project
+
+## Descriere
+Acest proiect implementează un framework de testare automată folosind Selenium și Behave (BDD). Proiectul conține scenarii simple, scenarii parametrizate și exemple de utilizare a tag-urilor.
+
+## Structura Proiectului
+- `features`: Conține fișierele de feature și definițiile pașilor.
+- `pages`: Conține definițiile obiectelor paginii.
+- `tests`: Conține scripturi pentru rularea testelor.
+- `reports`: Conține rapoartele de execuție.
+- `README.md`: Documentația proiectului.
+
+## Rulare
+Pentru a rula testele, executați:
+```bash
+python tests/test_runner.py
