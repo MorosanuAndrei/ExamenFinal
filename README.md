@@ -1,3 +1,3 @@
-requirements.txt
-selenium
-unittest-xml-reporting
+python -m venv env
+source env/bin/activate  # Pentru macOS/Linux
+.\env\Scripts\activate  # Pentru Windows
