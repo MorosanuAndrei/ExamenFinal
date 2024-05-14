@@ -1,0 +1,17 @@
+Feature: Example feature
+
+  @T1 @Regression
+  Scenario: Simple scenario
+    Given I open the homepage
+    When I search for "Selenium"
+    Then I should see results related to "Selenium"
+
+  @T2
+  Scenario Outline: Parametrized search
+    Given I open the homepage
+    When I search for "<search_term>"
+    Then I should see results related to "<search_term>"
+
+    Examples:
+      | search_term      |
+      | Python           |
