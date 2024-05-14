@@ -1,0 +1,21 @@
+Proiectul in sine
+test_framework/
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_login.py
+│   ├── test_registration.py
+│   └── test_search.py
+│
+├── pages/
+│   ├── __init__.py
+│   ├── login_page.py
+│   ├── registration_page.py
+│   └── search_page.py
+│
+├── utils/
+│   ├── __init__.py
+│   └── web_driver.py
+│
+├── requirements.txt
+└── run_tests.
