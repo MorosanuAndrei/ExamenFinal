@@ -1,0 +1,22 @@
+tests/test_example1.py
+
+import unittest
+from selenium import webdriver
+from pages.example_page import ExamplePage
+
+class TestExample1(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.page = ExamplePage(self.driver)
+        self.driver.get("http://example.com")
+
+    def tearDown(self):
+        self.driver.quit()
+
+    def test_click_some_element(self):
+        self.page.click_some_element()
+        self.assertTrue(self.page.wait_for_element() is not None, "Element should be present after clicking")
+
+if __name__ == "__main__":
+    unittest.main()
