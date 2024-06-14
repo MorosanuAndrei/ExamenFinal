@@ -1,25 +1,27 @@
-from behave import given, when, then
-from selenium import webdriver
+pages/example_page.py
+
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
-@given('I open the homepage')
-def step_impl(context):
-    context.driver = webdriver.Chrome()
-    context.driver.get("https://www.example.com")
+class ExamplePage:
+    def __init__(self, driver):
+        self.driver = driver
+        self.some_element_locator = (By.ID, "some_element_id")
 
-@when('I search for "{search_term}"')
-def step_impl(context, search_term):
-    search_box = context.driver.find_element(By.NAME, "q")
-    search_box.send_keys(search_term)
-    search_box.send_keys(Keys.RETURN)
+    def wait_for_element(self, timeout=10):
+        try:
+            element = WebDriverWait(self.driver, timeout).until(
+                EC.presence_of_element_located(self.some_element_locator)
+            )
+            return element
+        except TimeoutException:
+            return None
 
-@then('I should see results related to "{search_term}"')
-def step_impl(context, search_term):
-    WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.ID, "results"))
-    )
-    assert search_term in context.driver.page_source
-    context.driver.quit()
+    def click_some_element(self):
+        element = self.wait_for_element()
+        if element:
+            element.click()
+        else:
+            raise Exception("Element not found")
