@@ -1,3 +1,13 @@
-import subprocess
+run_tests.py
 
-subprocess.run(["behave"])
+import unittest
+import HtmlTestRunner
+
+if __name__ == "__main__":
+    loader = unittest.TestLoader()
+    suite = unittest.TestSuite()
+    
+    suite.addTests(loader.discover('tests'))
+    
+    runner = HtmlTestRunner.HTMLTestRunner(output='test_reports')
+    runner.run(suite)
