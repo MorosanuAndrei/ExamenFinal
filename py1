@@ -1,17 +1,10 @@
-bdd_test_project/
-│
-├── features/
-│   ├── steps/
-│   │   └── step_definitions.py
-│   ├── pages/
-│   │   └── page_objects.py
-│   ├── environment.py
-│   ├── example.feature
-│   └── ...
-├── tests/
-│   ├── test_runner.py
-│   └── ...
-├── reports/
-│   └── report.html
-├── README.md
-└── requirements.txt
+Structura Proiectului:
+
+tests/
+__init__.py
+test_example1.py
+test_example2.py
+pages/
+__init__.py
+example_page.py
+run_tests.py
