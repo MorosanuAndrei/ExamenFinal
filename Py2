@@ -1,17 +1,6 @@
-Feature: Example feature
+Fișiere:
 
-  @T1 @Regression
-  Scenario: Simple scenario
-    Given I open the homepage
-    When I search for "Selenium"
-    Then I should see results related to "Selenium"
-
-  @T2
-  Scenario Outline: Parametrized search
-    Given I open the homepage
-    When I search for "<search_term>"
-    Then I should see results related to "<search_term>"
-
-    Examples:
-      | search_term      |
-      | Python           |
+pages/example_page.py: Conține clase pentru maparea elementelor web și metode pentru a interacționa cu acestea.
+tests/test_example1.py: Conține teste pentru pagina definită în example_page.py.
+tests/test_example2.py: Un alt set de teste pentru altă pagină sau funcționalitate.
+run_tests.py: Script pentru rularea tuturor testelor și generarea unui raport.
